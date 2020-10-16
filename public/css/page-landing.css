@@ -1,0 +1,94 @@
+ 
+#page-landing {
+    background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%);
+    text-align: center;
+    min-height: 100vh;
+  
+    display: flex;
+}
+  
+#container {
+    margin: auto;
+  
+    width: min(90%, 112rem); /* se 90% for menor do que 112rem, então irá aplicar a width */
+}
+  
+.location,
+h1,
+.visit p {
+    height: 16vh;
+}
+
+#logo {
+    animation-delay: 50ms;
+}
+
+.location {
+    animation-delay: 100ms;
+}
+
+main h1 {
+    animation-delay: 150ms;
+    font-size: clamp(4rem, 8vw, 8.4rem); /*Mínimo que posso chegar 4 rem
+        Valor que quero 8vw
+        Máximo que posso chegar 8.4rem
+         */
+}
+  
+.visit p {
+    animation-delay: 200ms;
+}
+
+.visit a {
+    width: 8rem;
+    height: 8rem;
+    background: #ffd666;
+    border: none;
+    border-radius: 3rem;
+    display: flex;
+    align-items: center; /* altera o eixo Y para alinhar no eixo X*/
+    justify-content: center; /* altera o eixo X para que fica alinhado no eixo Y*/
+    margin: auto;
+    transition: background 200ms;
+    animation-delay: 200ms;
+}
+
+.visit a:hover {
+    background: #96feff;
+}
+
+/* desktop version */
+
+/*meta viewport do html é a responsável por fazer a aplicação do @media */
+/* significa que no mínimo de tela de 760px (760px ou superior funcionará) */
+@media (min-width: 760px) {
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .location, h1, .visit p {
+        height: initial;
+        text-align: initial;
+    }
+
+    .location {
+        text-align: right;
+    }
+
+    main h1 {
+        font-weight: bold;
+        line-height: .88;
+
+        margin: clamp(10%, 9vh, 12%) 0 4rem;
+        width: min(300px, 80%) /*se o mínimo for 300px aplica ele, se não, aplica 80% */
+    }
+
+    .visit p {
+        font-size: 2.4rem;
+        line-height: 1.5;
+        width: clamp(20rem, 20vw, 30rem);
+    }
+
+} 
