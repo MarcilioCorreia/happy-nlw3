@@ -10,8 +10,8 @@ const options = {
 const map = L.map('mapid', options).setView([41.1506342, -8.631285], 14)
 
 // create and add tileLayer
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-).addTo(map)
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
+.addTo(map)
 
 // create icon 
 const icon = L.icon({
@@ -30,6 +30,8 @@ L
 function selectImage(event) {
     const button = event.currentTarget
 
+    console.log(button.children)
+    
     // remover todas as classes .active
     const buttons = document.querySelectorAll(".images button")
     buttons.forEach(removeActiveClass)
@@ -41,7 +43,7 @@ function selectImage(event) {
     const image = button.children[0]
     const imageContainer = document.querySelector(".child_home-details > img")
     // atualizar o container de imagem
-    imageContainer.src = image.src
+    imageContainer.src = image.src  
     // adicionar a classe .active para este botão
     button.classList.add('active')
 }
